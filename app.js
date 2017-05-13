@@ -6,7 +6,6 @@ const app = express();
 
 app.set('port', (process.env.PORT || 3000));
 
-// app.use(express.static(path.join(__dirname + "./public")));
 app.use(express.static('public'));
 app.use(cors());
 app.use(routes);
@@ -15,6 +14,7 @@ app.use(routes);
 app.engine('html', require('ejs').renderFile);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
+
 app.use(function(req, res, next) {
   console.log(`${req.method} request for ${req.url}`);
   next();
