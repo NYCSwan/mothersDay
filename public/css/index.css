@@ -18,7 +18,7 @@ body {
 .panels {
   display: flex;
   overflow: hidden;
-  min-height: 100vh;
+  height: 100vh;
   /*border-bottom: 10px solid black;*/
 }
 
@@ -107,9 +107,13 @@ body {
   flex:5;
 }
 
+.panel.close {
+  /*close other panels*/
+}
 /* Button Formatting */
 .btn {
-  /*flex-basis: 1 1 auto;*/
+  flex-basis: 1 1 auto;
+  /*flex: 1;*/
   background: rgb(255,0,0);
   background-image: -webkit-linear-gradient(top, rgba(255,0,0, 0.7), rgba(255,198, 0, 0.7));
   background-image: -moz-linear-gradient(top, rgba(255,0,0, 0.7), rgba(255,198, 0, 0.7));
@@ -123,10 +127,18 @@ body {
   font-size: 20px;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
-  max-width: 30%;
+  width: 25%;
   max-height: 50px;
+  z-index: 100;
+  position: absolute;
+  bottom: 5%;
 }
 
+.panel.open .btn {
+  bottom: 1%;
+  align-self: center;
+
+}
 .btn:hover {
   background: #c7d3db;
   background-image: -webkit-linear-gradient(top, #c7d3db, rgb(255,0,0));
@@ -157,7 +169,7 @@ body {
   min-height: 100px;
   display: flex;
 }
-.momGift h3 {
+.momGift-header h3 {
   align-self: flex-end;
 }
 .momGift p {
