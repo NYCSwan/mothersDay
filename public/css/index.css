@@ -72,7 +72,7 @@ body {
 
 .panel > *:first-child { transform: translateY(0); }
 .panel.open-active > *:first-child { transform: translateY(-100%); }
-.panel > *:last-child { transform: translateY(0); }
+.panel > *:last-child { transform: translateY(100%); }
 .panel.open-active > *:last-child { transform: translateY(100%); }
 
 .panel p {
@@ -93,7 +93,7 @@ body {
 
 /* Button Formatting */
 .btn {
-  flex-basis: ;
+  flex-basis: 1 1 auto;
   background: rgb(255,0,0);
   background-image: -webkit-linear-gradient(top, rgba(255,0,0, 0.7), rgba(255,198, 0, 0.7));
   background-image: -moz-linear-gradient(top, rgba(255,0,0, 0.7), rgba(255,198, 0, 0.7));
@@ -107,7 +107,7 @@ body {
   font-size: 20px;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
-  width: 50%;
+  max-width: 30%;
   max-height: 50px;
 }
 
@@ -130,14 +130,19 @@ body {
 .momGift {
   display: flex;
   flex-wrap: wrap;
+  align-items: baseline;
   /*border: 1px solid black;*/
 }
 
-.momGift h1 {
+.momGift-header {
   background: rgb(141,141,141);
   width: 100%;
   margin-top: 0;
-  height: 100px;
+  min-height: 100px;
+  display: flex;
+}
+.momGift h3 {
+  align-self: flex-end;
 }
 .momGift p {
   flex: 1 0 auto;
