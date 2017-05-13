@@ -1,0 +1,146 @@
+html {
+      box-sizing: border-box;
+      background:#ffc600;
+      font-family:'helvetica neue';
+      font-size: 20px;
+      font-weight: 200;
+}
+
+body {
+  margin: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* Panel Formatting: Flex, styling */
+.panels {
+  display: flex;
+  overflow: hidden;
+  min-height: 100vh;
+  /*border-bottom: 10px solid black;*/
+}
+
+.panel {
+  border: 2px solid red;
+  background:#6B0F9C;
+  box-shadow:inset 0 0 0 5px rgba(255,255,255,0.1);
+  color:white;
+  text-align: center;
+  align-items:center;
+  /* Safari transitionend event.propertyName === flex */
+  /* Chrome + FF transitionend event.propertyName === flex-grow */
+  transition:
+    font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+    flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+    background 0.2s;
+  font-size: 20px;
+  background-size:cover;
+  background-position:center;
+  flex:1;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.panel1 {
+  background-image:url('/imgs/annaFam.jpeg');
+  border: 2px dot blue;
+
+}
+
+.panel2 {
+  background-image: url('/imgs/family.jpg');
+  border: 2px dot green;
+
+}
+
+.panel3 {
+  background-image: url('/imgs/MegMom.jpg');
+}
+.panel > * {
+      margin:0;
+      width: 100%;
+      transition:transform 0.5s;
+      flex: 1 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+    }
+
+.panel > *:first-child { transform: translateY(0); }
+.panel.open-active > *:first-child { transform: translateY(-100%); }
+.panel > *:last-child { transform: translateY(0); }
+.panel.open-active > *:last-child { transform: translateY(100%); }
+
+.panel p {
+  text-transform: uppercase;
+  font-family: 'Amatic SC', cursive;
+  text-shadow:0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+  font-size: 4em;
+}
+.panel p:nth-child(1) {
+  font-size: 6em;
+}
+
+.panel.open {
+  align-items: flex-end;
+  font-size:40px;
+  flex:5;
+}
+
+/* Button Formatting */
+.btn {
+  flex-basis: ;
+  background: rgb(255,0,0);
+  background-image: -webkit-linear-gradient(top, rgba(255,0,0, 0.7), rgba(255,198, 0, 0.7));
+  background-image: -moz-linear-gradient(top, rgba(255,0,0, 0.7), rgba(255,198, 0, 0.7));
+  background-image: -ms-linear-gradient(top, rgba(255,0,0, 0.7), rgba(255,198, 0, 0.7));
+  background-image: -o-linear-gradient(top, rgba(255,0,0, 0.7), rgba(255,198, 0, 0.7));
+  background-image: linear-gradient(to bottom, rgba(255,0,0, 0.7), rgba(255,198, 0, 0.7));
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  width: 50%;
+  max-height: 50px;
+}
+
+.btn:hover {
+  background: #c7d3db;
+  background-image: -webkit-linear-gradient(top, #c7d3db, rgb(255,0,0));
+  background-image: -moz-linear-gradient(top, #c7d3db, rgb(255,0,0));
+  background-image: -ms-linear-gradient(top, #c7d3db, rgb(255,0,0));
+  background-image: -o-linear-gradient(top, #c7d3db, rgb(255,0,0));
+  background-image: linear-gradient(to bottom, #c7d3db, rgb(255,0,0));
+  text-decoration: none;
+}
+
+
+/* YearOfSchool */
+.momGift-container {
+  height: 100vh;
+  background-color: rgb(225,225,225);
+}
+.momGift {
+  display: flex;
+  flex-wrap: wrap;
+  /*border: 1px solid black;*/
+}
+
+.momGift h1 {
+  background: rgb(141,141,141);
+  width: 100%;
+  margin-top: 0;
+  height: 100px;
+}
+.momGift p {
+  flex: 1 0 auto;
+  font-size: 20px;
+  max-width: 80%;
+}
