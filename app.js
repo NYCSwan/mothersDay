@@ -1,7 +1,9 @@
 const express = require('express');
 const cors = require('cors');
 
-var app = express();
+const app = express();
+
+const port = port.env.PORT || 3000;
 
 
 app.use(function(req, res, next) {
@@ -9,12 +11,12 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.use(express.static("./public"));
+app.use(express.static(__dirname + "./public"));
 
 app.use(cors());
 
-app.listen(3000);
-
-console.log("Express app running on port 3000");
+app.listen(port, function() {
+  console.log("Express app running on port 3000");
+});
 
 module.exports = app;

@@ -71,10 +71,26 @@ body {
     }
 
 .panel > *:first-child { transform: translateY(0); }
-.panel.open-active > *:first-child { transform: translateY(-100%); }
-.panel > *:last-child { transform: translateY(100%); }
-.panel.open-active > *:last-child { transform: translateY(100%); }
+.panel.open > *:first-child { transform: translateY(-100%); }
 
+.panel > *:nth-child(2) { transform: translateY(-200%); }
+.panel > *:nth-child(3) { transform: translateY(300%); }
+.panel > *:nth-child(4) { transform: translateY(200%); }
+
+.panel.open > *:nth-child(2) { transform: translateY(-50%); }
+.panel.open > *:nth-child(3) { transform: translateY(0); }
+.panel.open > *:nth-child(4) { transform: translateY(0); }
+
+.panel > *:last-child { transform: translateY(100%); }
+.panel.open > *:last-child { transform: translateY(0); }
+
+.panel.panel1.open {
+  background-image: url('/imgs/annaMom.jpeg');
+}
+
+.panel.panel3.open {
+  background-image: url('/imgs/megLittle.jpg');
+}
 .panel p {
   text-transform: uppercase;
   font-family: 'Amatic SC', cursive;
