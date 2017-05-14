@@ -19,11 +19,10 @@ body {
   display: flex;
   overflow: hidden;
   height: 100vh;
-  /*border-bottom: 10px solid black;*/
+  background-color: rgb(141,141,141);
 }
 
 .panel {
-  border: 2px solid red;
   background:#6B0F9C;
   box-shadow:inset 0 0 0 5px rgba(255,255,255,0.1);
   color:white;
@@ -47,21 +46,16 @@ body {
 
 .panel1 {
   background-image:url('/imgs/annaFam.jpeg');
-  border: 2px dot blue;
-
 }
 
 .panel2 {
   background-image: url('/imgs/family.jpg');
-  border: 2px dot green;
-
 }
 
 .panel3 {
   background-image: url('/imgs/MegMom.jpg');
 }
 .panel > * {
-      margin:0;
       width: 100%;
       transition:transform 0.5s;
       flex: 1 0 auto;
@@ -69,23 +63,37 @@ body {
       align-items: baseline;
       justify-content: center;
     }
+
 .panel:hover {
   cursor: pointer;
+  border-radius: 100px;
 }
 
 .panel > *:first-child { transform: translateY(0); }
 .panel.open > *:first-child { transform: translateY(-100%); }
 
-.panel > *:nth-child(2) { transform: translateY(-200%); }
-.panel > *:nth-child(3) { transform: translateY(300%); }
-.panel > *:nth-child(4) { transform: translateY(200%); }
+.panel > *:nth-child(2) {
+  transform: translateY(-200%);
+  visibility: hidden;
+}
+.panel > *:nth-child(3) {
+  transform: translateY(300%);
+  visibility: hidden;
+}
+.panel > *:nth-child(4) {
+  transform: translateY(200%);
+  visibility: hidden;
+}
 
-.panel.open > *:nth-child(2) { transform: translateY(-100%); }
-.panel.open > *:nth-child(3) { transform: translateY(-60%); }
-.panel.open > *:nth-child(4) { transform: translateY(-40%); }
+.panel.open > *:nth-child(2) { transform: translateY(-100%); visibility: visible;}
+.panel.open > *:nth-child(3) { transform: translateY(-60%); visibility: visible; }
+.panel.open > *:nth-child(4) { transform: translateY(-40%); visibility: visible; }
 
-.panel > *:last-child { transform: translateY(100%); }
-.panel.open > *:last-child { transform: translateY(0); }
+.panel > *:last-child {
+  transform: translateY(100%);
+  visibility: hidden;
+}
+.panel.open > *:last-child { transform: translateY(0); visibility: visible;}
 
 .panel.panel1.open {
   background-image: url('/imgs/annaMom.jpeg');
@@ -98,7 +106,7 @@ body {
   text-transform: uppercase;
   font-family: 'Amatic SC', cursive;
   text-shadow:0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
-  font-size: 3em;
+  font-size: 2em;
 }
 .panel p:nth-child(1) {
   font-size: 6em;
